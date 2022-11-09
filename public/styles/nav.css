@@ -1,0 +1,32 @@
+/* NAV */
+nav {
+  background-color: #3E54A2;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  display: flex;
+  height: 120px;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.nav--logo {
+  font-family: 'Bungee', cursive;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+
+.nav--new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.35em;
+}
+
+.nav--icon {
+  color: #ff0000;
+}
