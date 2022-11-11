@@ -12,7 +12,6 @@
   border: 0;
   border-bottom: 3px solid #545149;
   color: #545149;
-  height: 46px; /* Default height */
   width: 100%;
   font-weight: 600;
   margin-bottom: 0.8rem;
@@ -46,6 +45,10 @@
   color: #545149;
   font-family: Bungee, cursive;
   font-weight: 400;
+}
+
+.new-tweet .counter.text-red {
+  color: #ff0000;
 }
 
 .new-tweet .new-tweet-submit {
