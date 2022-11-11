@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -17,7 +20,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
   font-weight: 300;
 }
@@ -26,16 +29,41 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
-  background-color: #f4f1ec;
+.container {
   max-width: 90%;
   margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.container-fluid {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  background-color: #f4f1ec;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
 }
 
 strong {
   font-weight: 600;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
