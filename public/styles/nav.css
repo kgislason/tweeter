@@ -1,9 +1,8 @@
 /* NAV */
 nav {
   position: fixed;
-  background-color: #3E54A2;
-  border-radius: 8px;
-  box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.1);
+  background-color: #3e54a2;
+  box-shadow: 3px 3px 3px 4px rgb(0 0 0 / 10%);
   color: #fff;
   display: flex;
   height: 120px;
@@ -14,14 +13,14 @@ nav {
   width: 100%;
 }
 
-.nav--logo {
-  font-family: 'Bungee', cursive;
+.nav-logo {
+  font-family: Bungee, cursive;
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 0.5em;
 }
 
-.nav--new-tweet {
+.nav-new-tweet {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +28,6 @@ nav {
   margin-bottom: 0.35em;
 }
 
-.nav--icon {
-  color: #ff0000;
+.nav-icon {
+  color: #f00;
 }
