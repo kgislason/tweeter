@@ -1,78 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- Google Fonts Bungee and Source Sans Pro -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-  
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <!-- Google Fonts Bungee and Source Sans Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="nav--logo">tweeter</span>
-      <div class="nav--new-tweet">
-        <div><strong>Write</strong> a new tweet</div>
-        <div class="nav--icon">
-          <i class="fa-solid fa-angles-down"></i></div>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span class="nav-logo">tweeter</span>
+    <div class="nav-new-tweet">
+      <div><strong>Write</strong> a new tweet</div>
+      <div class="nav-icon">
+        <i class="fa-solid fa-angles-down"></i>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Header -->
+  <!-- Header -->
+  <header>
+    <div class="container-fluid">
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <div>
+        <h2>Your Name</h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
     <header>
-      <div class="container">
-        <div>
-            <img src="/images/profile-hex.png"> 
-        </div>
-        <div>
-            <h2>Your Name</h2>
-        </div>
-      </div>
+      <h1>Tweeter</h1>
     </header>
-  
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section>
-        <header>
-          <h1>Tweeter</h1>
-        </header>
-        <section>
-          <h2>Heading Level 2</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, suscipit soluta beatae fuga obcaecati, quam, consequatur velit provident doloribus voluptate dignissimos quod earum enim. Magni quos qui aliquid dolorum ducimus?</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero eum id, dignissimos impedit nisi aut reprehenderit laudantium? Vel ratione earum facere obcaecati ipsam illum, impedit eligendi dolorem, amet nemo non!</p>
-          <ul>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia facilis recusandae cupiditate quod ab similique eveniet maiores, pariatur aliquam ipsa odio laudantium, blanditiis amet modi cum! Dicta id molestiae maxime.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia facilis recusandae cupiditate quod ab similique eveniet maiores, pariatur aliquam ipsa odio laudantium, blanditiis amet modi cum! Dicta id molestiae maxime.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia facilis recusandae cupiditate quod ab similique eveniet maiores, pariatur aliquam ipsa odio laudantium, blanditiis amet modi cum! Dicta id molestiae maxime.</li>
-          </ul>
-          <h3>Heading Level 3</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo doloremque atque dolor officia nihil aliquam aut ducimus velit a vitae earum quasi neque eligendi animi impedit, cupiditate tempora nostrum quidem.</p>         
-        </section>
-      </section>
-      <aside>
-        <h2>Aside</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore doloribus unde est impedit veniam, repellat labore voluptatum totam vero fugiat, reiciendis eveniet inventore qui consequuntur? Eum sunt cupiditate reiciendis tenetur!</p>
-      </aside>
-    </main>
-  </body>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action="/tweets">
+        <label for="tweet-text" class="sr-only">What are you humming about?</label>
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div class="new-tweet-submit">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+    <aside>
+      <h2>Aside</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore doloribus unde est impedit veniam, repellat
+        labore voluptatum totam vero fugiat, reiciendis eveniet inventore qui consequuntur? Eum sunt cupiditate
+        reiciendis tenetur!</p>
+    </aside>
+  </main>
+</body>
+
 </html>
