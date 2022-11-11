@@ -1,5 +1,5 @@
-header .container {
-  background-color: #D89922;
+header .container-fluid {
+  background-color: #d89922;
   background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
   color: #fff;
   max-height: 520px;
