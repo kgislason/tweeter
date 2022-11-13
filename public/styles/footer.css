@@ -5,10 +5,10 @@ footer {
 }
 
 footer a {
-  color: rgba(62 84 162 / 50%);
+  color: rgba(62 84 162 / 80%);
   text-decoration: none;
 }
 
 footer a:hover {
-  color: rgba(62 84 162 / 80%);
+  color: rgba(62 84 162 / 100%);
 }
