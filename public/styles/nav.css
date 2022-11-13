@@ -1,5 +1,5 @@
 /* NAV */
-nav {
+.nav-primary {
   position: fixed;
   background-color: #3e54a2;
   box-shadow: 3px 3px 3px 4px rgb(0 0 0 / 10%);
@@ -13,14 +13,14 @@ nav {
   width: 100%;
 }
 
-.nav-logo {
+.nav-primary .nav-logo {
   font-family: Bungee, cursive;
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 0.5em;
 }
 
-.nav-new-tweet {
+.nav-primary .nav-new-tweet {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +28,6 @@ nav {
   margin-bottom: 0.35em;
 }
 
-.nav-icon {
+.nav-primary .nav-icon {
   color: #f00;
 }

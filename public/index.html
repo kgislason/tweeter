@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,600&display=swap"
     rel="stylesheet">
 
   <!-- Font Awesome -->
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -36,7 +36,7 @@
 
 <body>
   <!-- Top nav bar (fixed) -->
-  <nav>
+  <nav class="nav-primary">
     <span class="nav-logo">tweeter</span>
     <div class="nav-new-tweet">
       <div><strong>Write</strong> a new tweet</div>
@@ -74,13 +74,97 @@
         </div>
       </form>
     </section>
-    <aside>
-      <h2>Aside</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore doloribus unde est impedit veniam, repellat
-        labore voluptatum totam vero fugiat, reiciendis eveniet inventore qui consequuntur? Eum sunt cupiditate
-        reiciendis tenetur!</p>
-    </aside>
+
+    <!-- Tweets-->
+    <article class="single-tweet">
+      <header>
+        <!-- <img src="https://picsum.photos/60" class="single-tweet-pic" alt="Author Profile Picture"> -->
+        <div class="img-placeholder">
+          <i class="fa-2x fa-solid fa-user"></i>
+        </div>
+        <span class="single-tweet-author">Rhoda Jacobs</span>
+        <span class="single-tweet-handle"><a href="">@MrsJacobs</a></span>
+      </header>
+
+      <div class="single-tweet-content">
+        <p>Hello world!</p>
+      </div>
+      <footer>
+        <time>10 days ago</time>
+        <nav class="single-tweet-actions">
+          <button class="btn flag">
+            <span class="sr-only">Flag this tweet</span>
+            <i class="fa-solid fa-flag"></i>
+          </button>
+          <button class="retweet">
+            <span class="sr-only">Retweet this tweet</span>
+            <i class="fa-solid fa-retweet"></i>
+          </button>
+          <button class="like">
+            <span class="sr-only">Like this tweet</span>
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </nav>
+      </footer>
+    </article>
+    <article class="single-tweet">
+      <header>
+        <img src="https://picsum.photos/60" class="single-tweet-pic" alt="Author Profile Picture">
+        <span class="single-tweet-author">Rhoda Jacobs</span>
+        <span class="single-tweet-handle"><a href="">@MrsJacobs</a></span>
+      </header>
+
+      <div class="single-tweet-content">
+        <p>Hello world!</p>
+      </div>
+      <footer>
+        <time>10 days ago</time>
+        <nav class="single-tweet-actions">
+          <button class="btn flag">
+            <span class="sr-only">Flag this tweet</span>
+            <i class="fa-solid fa-flag"></i>
+          </button>
+          <button class="retweet">
+            <span class="sr-only">Retweet this tweet</span>
+            <i class="fa-solid fa-retweet"></i>
+          </button>
+          <button class="like">
+            <span class="sr-only">Like this tweet</span>
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </nav>
+      </footer>
+    </article>
+    <article class="single-tweet">
+      <header>
+        <img src="https://picsum.photos/60" class="single-tweet-pic" alt="Author Profile Picture">
+        <span class="single-tweet-author">Rhoda Jacobs</span>
+        <span class="single-tweet-handle"><a href="">@MrsJacobs</a></span>
+      </header>
+
+      <div class="single-tweet-content">
+        <p>Hello world!</p>
+      </div>
+      <footer>
+        <time>10 days ago</time>
+        <nav class="single-tweet-actions">
+          <button class="btn flag">
+            <span class="sr-only">Flag this tweet</span>
+            <i class="fa-solid fa-flag"></i>
+          </button>
+          <button class="retweet">
+            <span class="sr-only">Retweet this tweet</span>
+            <i class="fa-solid fa-retweet"></i>
+          </button>
+          <button class="like">
+            <span class="sr-only">Like this tweet</span>
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </nav>
+      </footer>
+    </article>
   </main>
+  <footer>&copy; <a target="_blank" href="https://github.com/kgislason/tweeter">@kgislason</a> | Lighthouse Labs</footer>
   <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
 </body>
 
