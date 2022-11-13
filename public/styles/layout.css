@@ -43,10 +43,6 @@ main {
   background-color: #f4f1ec;
 }
 
-footer {
-  text-align: center;
-}
-
 h1,
 h2,
 h3,
@@ -75,4 +71,3 @@ strong {
   white-space: nowrap;
   border-width: 0;
 }
-

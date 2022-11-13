@@ -1,15 +1,15 @@
-.single-tweet {
+.tweet {
   border: 3px solid #545149;
   margin-bottom: 3rem;
   padding: 1rem;
   transition: box-shadow 0.3s;
 }
 
-.single-tweet:hover {
-  box-shadow: 10px 10px 1px 0 rgba(62, 84, 162, 0.2);
+.tweet:hover {
+  box-shadow: 10px 10px 1px 0 rgba(62 84 162 / 20%);
 }
 
-.single-tweet header {
+.tweet header {
   display: flex;
   font-size: 1.35rem;
   justify-content: flex-start;
@@ -17,56 +17,56 @@
   padding: 0 1rem;
 }
 
-.single-tweet header img,
-.single-tweet header .img-placeholder {
+.tweet header img,
+.tweet header .img-placeholder {
   border-radius: 50%;
   margin-right: 0.75rem;
 }
 
-.single-tweet header .single-tweet-handle {
+.tweet header .tweet-handle {
   margin-left: auto;
 }
 
-.single-tweet .single-tweet-content {
+.tweet .tweet-handle a {
+  text-decoration: none;
+  color: rgba(62 84 162 / 50%);
+}
+
+.tweet .tweet-handle a:hover {
+  color: rgba(62 84 162 / 100%);
+}
+
+.tweet .tweet-content {
   font-size: 1.2rem;
   font-weight: 400;
   padding: 1rem 1.25rem;
 }
 
-.single-tweet header a {
-  text-decoration: none;
-  color: rgba(62, 84, 162, 0.5);
-}
-
-.single-tweet header a:hover {
-  color: rgba(62, 84, 162, 0.8);
-}
-
-.single-tweet footer {
+.tweet footer {
   border-top: 3px solid #545149;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0.75rem;
 }
 
-.single-tweet footer time {
+.tweet footer time {
   font-size: 0.9rem;
   font-weight: 400;
 }
 
-.single-tweet footer nav {
+.tweet .tweet-actions {
   display: flex;
   justify-content: flex-end;
   list-style: none;
 }
 
-.single-tweet footer button {
+.tweet .tweet-actions button {
   border: 0;
   color: #3e54a2;
   font-size: 1.1rem;
   transition: color 0.3s;
 }
 
-.single-tweet footer button:hover {
-  color: #d89922
+.tweet .tweet-actions button:hover {
+  color: #d89922;
 }
