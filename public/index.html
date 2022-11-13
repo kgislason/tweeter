@@ -33,7 +33,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script src="/scripts/client.js"></script>
+  <script src="/scripts/client.js" async></script>
 </head>
 
 <body>
@@ -78,93 +78,39 @@
     </section>
 
     <!-- Tweets-->
-    <article class="tweet">
-      <header>
-        <!-- <img src="https://picsum.photos/60" class="tweet-pic" alt="Author Profile Picture"> -->
-        <div class="img-placeholder">
-          <i class="fa-2x fa-solid fa-user"></i>
+    <div id="tweets-container">
+      <article class="tweet">
+        <header>
+          <!-- <img src="https://picsum.photos/60" class="tweet-pic" alt="Author Profile Picture"> -->
+          <div class="img-placeholder">
+            <i class="fa-2x fa-solid fa-user"></i>
+          </div>
+          <span class="tweet-author">Rhoda Jacobs</span>
+          <span class="tweet-handle"><a href="">@MrsJacobs</a></span>
+        </header>
+
+        <div class="tweet-content">
+          <p>Hello world!</p>
         </div>
-        <span class="tweet-author">Rhoda Jacobs</span>
-        <span class="tweet-handle"><a href="">@MrsJacobs</a></span>
-      </header>
-
-      <div class="tweet-content">
-        <p>Hello world!</p>
-      </div>
-      <footer>
-        <time>10 days ago</time>
-        <nav class="tweet-actions">
-          <button type="button" class="btn flag">
-            <span class="sr-only">Flag this tweet</span>
-            <i class="fa-solid fa-flag"></i>
-          </button>
-          <button type="button" class="retweet">
-            <span class="sr-only">Retweet this tweet</span>
-            <i class="fa-solid fa-retweet"></i>
-          </button>
-          <button type="button" class="like">
-            <span class="sr-only">Like this tweet</span>
-            <i class="fa-solid fa-heart"></i>
-          </button>
-        </nav>
-      </footer>
-    </article>
-    <article class="tweet">
-      <header>
-        <img src="https://picsum.photos/60" class="tweet-pic" alt="Author Profile Picture">
-        <span class="tweet-author">Rhoda Jacobs</span>
-        <span class="tweet-handle"><a href="">@MrsJacobs</a></span>
-      </header>
-
-      <div class="tweet-content">
-        <p>Hello world!</p>
-      </div>
-      <footer>
-        <time>10 days ago</time>
-        <nav class="tweet-actions">
-          <button  type="button" class="btn flag">
-            <span class="sr-only">Flag this tweet</span>
-            <i class="fa-solid fa-flag"></i>
-          </button>
-          <button type="button" class="retweet">
-            <span class="sr-only">Retweet this tweet</span>
-            <i class="fa-solid fa-retweet"></i>
-          </button>
-          <button type="button" class="like">
-            <span class="sr-only">Like this tweet</span>
-            <i class="fa-solid fa-heart"></i>
-          </button>
-        </nav>
-      </footer>
-    </article>
-    <article class="tweet">
-      <header>
-        <img src="https://picsum.photos/60" class="tweet-pic" alt="Author Profile Picture">
-        <span class="tweet-author">Rhoda Jacobs</span>
-        <span class="tweet-handle"><a href="">@MrsJacobs</a></span>
-      </header>
-
-      <div class="tweet-content">
-        <p>Hello world!</p>
-      </div>
-      <footer>
-        <time>10 days ago</time>
-        <nav class="tweet-actions">
-          <button type="button" class="btn flag">
-            <span class="sr-only">Flag this tweet</span>
-            <i class="fa-solid fa-flag"></i>
-          </button>
-          <button type="button" class="retweet">
-            <span class="sr-only">Retweet this tweet</span>
-            <i class="fa-solid fa-retweet"></i>
-          </button>
-          <button type="button" class="like">
-            <span class="sr-only">Like this tweet</span>
-            <i class="fa-solid fa-heart"></i>
-          </button>
-        </nav>
-      </footer>
-    </article>
+        <footer>
+          <time>10 days ago</time>
+          <nav class="tweet-actions">
+            <button type="button" class="btn flag">
+              <span class="sr-only">Flag this tweet</span>
+              <i class="fa-solid fa-flag"></i>
+            </button>
+            <button type="button" class="retweet">
+              <span class="sr-only">Retweet this tweet</span>
+              <i class="fa-solid fa-retweet"></i>
+            </button>
+            <button type="button" class="like">
+              <span class="sr-only">Like this tweet</span>
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </nav>
+        </footer>
+      </article>
+    </div>
   </main>
   <footer>&copy; Tweeter Project by <a target="_blank" href="https://github.com/kgislason/tweeter">@kgislason</a> | Lighthouse Labs</footer>
   <script src="./scripts/composer-char-counter.js"></script>
