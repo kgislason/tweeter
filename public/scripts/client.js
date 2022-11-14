@@ -77,11 +77,33 @@ $(document).ready(function() {
   /**
    * Post New Tweets from using AJAX
    */
-  const postNewTweet = function() {
+  const postNewTweet = function(object) {
     $('#new-tweet').submit(function(e) {
+
       // Prevent form from submitting and reloading the page
       e.preventDefault();
 
+      // Create an object to store the form data
+      const formDataObj = {};
+      formDataObj["text"] =  $(this).find('textarea').val();
+
+      // Write to errors div
+      let message = '';  $(this).find('.errors').text('');
+
+
+      if (!formDataObj["text"]) {
+        message = `<div>You cannot post an empty tweet!</div>`;
+        $(this).find('.errors').append(message);
+        return;
+      };
+
+      if (formDataObj["text"].length > 140) {
+        message = "<div>You cannot post a tweet longer than 140 characters</div>";
+        $(this).find('.errors').append(message);
+        return;
+      }
+
+ 
       // Serialize the form data
       let data = $(this).serialize();
 
@@ -97,5 +119,4 @@ $(document).ready(function() {
   }
   postNewTweet();
 
-  
 });

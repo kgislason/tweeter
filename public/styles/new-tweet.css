@@ -25,6 +25,13 @@
   color: #cac8c4;
 }
 
+.new-tweet .errors div {
+  border: 3px solid #f00;
+  color: #f00;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
 .new-tweet button {
   background-color: #3e54a2;
   border: 0;
