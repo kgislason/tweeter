@@ -5,6 +5,17 @@
  */
 
 /**
+ * Prevent code frmo be executed from tweet input
+ * @param {string} str
+ * @returns safe string
+ */
+ const escapeCode = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+/**
  * Function createTweetElement()
  *
  * @param object
@@ -21,7 +32,7 @@ const createTweetElement = function(object) {
     <span class="tweet-handle"><a href="">${object["user"]["handle"]}</a></span>
   </header>
   <div class="tweet-content">
-    <p>${object["content"]["text"]}</p>
+    <p>${escapeCode(object["content"]["text"])}</p>
   </div>
   <footer>
       <time>${timeago.format(object["created_at"])}</time>
@@ -59,6 +70,7 @@ const renderTweets = function(tweets) {
   }
 };
 
+
 /**
  * Function calls after document is ready
  */
@@ -88,18 +100,19 @@ $(document).ready(function() {
       formDataObj["text"] =  $(this).find('textarea').val();
 
       // Write to errors div
-      let message = '';  $(this).find('.errors').text('');
+      let message = '';  
+      $(this).find('.errors').text('').hide();
 
 
       if (!formDataObj["text"]) {
         message = `<div>You cannot post an empty tweet!</div>`;
-        $(this).find('.errors').append(message);
+        $(this).find('.errors').append(message).slideDown();
         return;
       };
 
       if (formDataObj["text"].length > 140) {
         message = "<div>You cannot post a tweet longer than 140 characters</div>";
-        $(this).find('.errors').append(message);
+        $(this).find('.errors').append(message).slideDown();
         return;
       }
 
