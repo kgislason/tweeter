@@ -24,7 +24,7 @@ const createTweetElement = function(object) {
     <p>${object["content"]["text"]}</p>
   </div>
   <footer>
-      <time>${object["created_at"]} ago</time>
+      <time>${timeago.format(object["created_at"])}</time>
       <nav class="tweet-actions">
         <button type="button" class="btn flag">
           <span class="sr-only">Flag this tweet</span>
@@ -63,6 +63,7 @@ const renderTweets = function(tweets) {
  * Function calls after document is ready
  */
 $(document).ready(function() {
+  
   // renderTweets(data);
   const loadTweets = function() {
     $.getJSON('/tweets', function( data ) {
