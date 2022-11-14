@@ -86,9 +86,23 @@ const data = [
   }
 ];
 
+
+
+
 /**
  * Function calls after document is ready
  */
 $(document).ready(function() {
   renderTweets(data);
+
+  $('#new-tweet').submit(function(e) {
+    e.preventDefault();
+    let data = $(this).serialize();
+    $.post('/tweets/', data).done(function( data ) {
+      console.log("Success");
+    }).done(function( data ) {
+      console.log(data);
+      $( "#tweets-container" ).append(`<div>New tweet gos here</div>`);
+    });
+  });  
 });
