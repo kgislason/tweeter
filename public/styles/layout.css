@@ -34,9 +34,65 @@ body {
   margin: 0 auto;
 }
 
-.container-fluid {
-  max-width: 100%;
-  margin: 0 auto;
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Clear fixed Nav */
+.header,
+.main {
+  margin-top: 220px;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    margin-top: 120px;
+  }
+
+  .main {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.header {
+  flex: 1 0 33%;
+  max-width: 33%;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+}
+
+.main {
+  flex: 2 0 66%;
+  max-width: 66%;
+  padding-left: 6rem;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    flex: 1 0 90%;
+    max-width: 90%;
+    padding-left: 0;
+  }
 }
 
 main {

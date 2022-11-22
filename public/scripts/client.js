@@ -9,7 +9,7 @@
  * @param {string} str
  * @returns safe string
  */
- const escapeCode = function (str) {
+const escapeCode = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -75,11 +75,9 @@ const renderTweets = function(tweets) {
  * Function calls after document is ready
  */
 $(document).ready(function() {
-  
-  // renderTweets(data);
+
   const loadTweets = function() {
-    $.getJSON('/tweets', function( data ) {
-      console.log(data)
+    $.getJSON('/tweets', function(data) {
       renderTweets(data);
     });
   };
@@ -89,7 +87,7 @@ $(document).ready(function() {
   /**
    * Post New Tweets from using AJAX
    */
-  const postNewTweet = function(object) {
+  const postNewTweet = function() {
     $('#new-tweet').submit(function(e) {
 
       // Prevent form from submitting and reloading the page
@@ -100,7 +98,7 @@ $(document).ready(function() {
       formDataObj["text"] =  $(this).find('textarea').val();
 
       // Write to errors div
-      let message = '';  
+      let message = '';
       $(this).find('.errors').text('').hide();
 
 
@@ -108,7 +106,7 @@ $(document).ready(function() {
         message = `<div>You cannot post an empty tweet!</div>`;
         $(this).find('.errors').append(message).slideDown();
         return;
-      };
+      }
 
       if (formDataObj["text"].length > 140) {
         message = "<div>You cannot post a tweet longer than 140 characters</div>";
@@ -122,14 +120,13 @@ $(document).ready(function() {
 
       // Clear the textarea
       $(this).find('textarea').val('');
-      $.post('/tweets/', data, function(data) {        
-        console.log(data);
+      $.post('/tweets/', data, function(data) {
         loadTweets(data);
-      }).done(function(data) {
+      }).done(function() {
         console.log("Success!");
       });
     });
-  }
+  };
   postNewTweet();
 
 });
