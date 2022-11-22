@@ -4,7 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css">
@@ -43,12 +43,15 @@
   <!-- Top nav bar (fixed) -->
   <nav class="nav-primary">
     <span class="nav-logo">tweeter</span>
-    <div class="nav-new-tweet">
-      <div><strong>Write</strong> a new tweet</div>
-      <div class="nav-icon">
-        <i class="fa-solid fa-angles-down"></i>
-      </div>
-    </div>
+    <ul class="nav-new-tweet">
+      <li>
+        <a href="#new-tweet"><strong>Write</strong> a new tweet
+          <div class="nav-icon">
+            <i class="fa-solid fa-angles-down"></i>
+          </div>
+        </a>
+      </li>
+    </ul>
   </nav>
 <div class="container">
   <div class="row">
@@ -65,10 +68,10 @@
   <!-- Page-specific (main) content here -->
   <main class="main">
     <header class="main-header">
-      <h1>Tweeter</h1>
+      <h1 class="sr-only">Tweeter</h1>
     </header>
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+    <section id="new-tweet" class="new-tweet">
+      <h2 class="sr-only">Compose Tweet</h2>
       <form id="new-tweet" method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
         <textarea rows="2" name="text" id="tweet-text" placeholder="Start tweeting here..."></textarea>

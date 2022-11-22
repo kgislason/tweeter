@@ -5,11 +5,12 @@
  */
 
 /**
- * Prevent code frmo be executed from tweet input
+ * Prevent code from being executed from tweet input
  * @param {string} str
  * @returns safe string
  */
-const escapeCode = function(str) {
+
+const escapeCode = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -22,7 +23,7 @@ const escapeCode = function(str) {
  * @returns markup for a single tweet article
  */
 
-const createTweetElement = function(object) {
+const createTweetElement = function (object) {
   const $tweet = $(`<article class="tweet"></article>`);
 
   $tweet.prepend(`
@@ -57,27 +58,31 @@ const createTweetElement = function(object) {
 };
 
 /**
- * renderTweets
- *
- * Loop through array of user objects
- * @param array tweets
- */
-
-const renderTweets = function(tweets) {
-  const container = $('#tweets-container');
-  for (let tweet in tweets) {
-    container.prepend(createTweetElement(tweets[tweet]));
-  }
-};
-
-
-/**
  * Function calls after document is ready
  */
-$(document).ready(function() {
+$(document).ready(function () {
 
-  const loadTweets = function() {
-    $.getJSON('/tweets', function(data) {
+  /**
+   * renderTweets
+   *
+   * Loop through array of user objects
+   * @param array tweets
+   */
+
+  const renderTweets = function (tweets) {
+    const container = $('#tweets-container');
+    for (let tweet in tweets) {
+      container.prepend(createTweetElement(tweets[tweet]));
+    }
+  };
+
+  /**
+   * Load Tweets loadTweets()
+   * 
+   */
+
+  const loadTweets = function () {
+    $.getJSON('/tweets', function (data) {
       renderTweets(data);
     });
   };
@@ -86,8 +91,10 @@ $(document).ready(function() {
 
   /**
    * Post New Tweets from using AJAX
+   * 
    */
-  const postNewTweet = function() {
+
+  const postNewTweet = function () {
     $('#new-tweet').submit(function(e) {
 
       // Prevent form from submitting and reloading the page
@@ -95,7 +102,7 @@ $(document).ready(function() {
 
       // Create an object to store the form data
       const formDataObj = {};
-      formDataObj["text"] =  $(this).find('textarea').val();
+      formDataObj["text"] = $(this).find('textarea').val();
 
       // Write to errors div
       let message = '';
@@ -114,19 +121,64 @@ $(document).ready(function() {
         return;
       }
 
- 
+
       // Serialize the form data
       let data = $(this).serialize();
 
       // Clear the textarea
       $(this).find('textarea').val('');
-      $.post('/tweets/', data, function(data) {
+
+      $.post('/tweets/', data, function (data) {
         loadTweets(data);
-      }).done(function() {
+      }).done(function () {
         console.log("Success!");
       });
     });
   };
+
   postNewTweet();
+
+  /**
+   * Function navOnScroll()
+   *
+   * @returns adds class to nav on scroll
+   */
+
+  const navOnScroll = function () {
+    $(window).on('scroll', function () {
+      let windowTopOffset = $(this).scrollTop();
+
+      if (windowTopOffset == 0) {
+        $('.nav-primary').removeClass('on-scroll');
+      } else {
+        $('.nav-primary').addClass('on-scroll');
+      }
+    });
+  };
+
+  navOnScroll();
+
+  /**
+   * Function showTweetForm()
+   *
+   * @returns reveals the tweet form on nav button click
+   */
+
+  const showTweetForm = function () {
+    const newTweetElem = $('#new-tweet');
+    newTweetElem.hide();
+
+    $('.nav-primary a').on('click', function (e) {
+      e.preventDefault();
+
+      $('.new-tweet').slideDown();
+      const newTweetPosition = newTweetElem.position();
+      console.log(newTweetPosition.top);
+      $('body, html').animate({
+        scrollTop: newTweetPosition.top - 120
+      }, 300);
+    });
+  };
+  showTweetForm();
 
 });
