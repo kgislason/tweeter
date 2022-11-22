@@ -1,3 +1,5 @@
+@import 'variables';
+
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -20,7 +22,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-primary;
   font-size: 24px;
   font-weight: 300;
 }
@@ -32,10 +34,8 @@ body {
 .container {
   max-width: 90%;
   margin: 0 auto;
-}
 
-@media (max-width: 1024px) {
-  .container {
+  @media (max-width: 1024px) {
     max-width: 100%;
   }
 }
@@ -44,10 +44,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-@media (max-width: 1024px) {
-  .row {
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
 }
@@ -72,10 +69,8 @@ body {
 .header {
   flex: 1 0 33%;
   max-width: 33%;
-}
 
-@media (max-width: 1024px) {
-  .header {
+  @media (max-width: 1024px) {
     flex: 1 0 100%;
     max-width: 100%;
   }
@@ -85,10 +80,8 @@ body {
   flex: 2 0 66%;
   max-width: 66%;
   padding-left: 6rem;
-}
 
-@media (max-width: 1024px) {
-  .main {
+  @media (max-width: 1024px) {
     flex: 1 0 90%;
     max-width: 90%;
     padding-left: 0;

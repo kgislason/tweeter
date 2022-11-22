@@ -1,8 +1,10 @@
+@import 'variables';
+
 /* NAV */
 .nav-primary {
   position: fixed;
   background-color: #3e54a2;
-  box-shadow: 3px 3px 3px 4px rgb(0 0 0 / 10%);
+  box-shadow: 3px 3px 3px 4px rgba($black, 0.1);
   color: #fff;
   display: flex;
   height: 120px;
@@ -14,7 +16,7 @@
 }
 
 .nav-primary .nav-logo {
-  font-family: Bungee, cursive;
+  font-family: $font-heading;
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 0.5em;

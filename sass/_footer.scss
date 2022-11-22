@@ -1,0 +1,17 @@
+@import 'variables';
+
+footer {
+  font-size: 0.95rem;
+  padding: 4rem 0 3rem;
+  text-align: center;
+
+  a {
+    color: rgba($purple, 0.8);
+
+    text-decoration: none;
+  
+    &:hover {
+      color: rgba($purple, 1);
+    }
+  }
+}

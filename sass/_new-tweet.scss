@@ -1,18 +1,20 @@
+@import 'variables';
+
 .new-tweet {
   margin-bottom: 3rem;
 }
 
 .new-tweet label {
   display: block;
-  color: #545149;
+  color: $brown;
   font-weight: 600;
 }
 
 .new-tweet textarea {
   background: transparent;
   border: 0;
-  border-bottom: 3px solid #545149;
-  color: #545149;
+  border-bottom: 3px solid $brown;
+  color: $brown;
   width: 100%;
   font-size: 1.4rem;
   font-weight: 400;
@@ -25,19 +27,19 @@
 }
 
 .new-tweet .errors div {
-  border: 3px solid #f00;
-  color: #f00;
+  border: 3px solid $red;
+  color: $red;
   margin-bottom: 1rem;
   padding: 1rem;
 }
 
 .new-tweet button {
-  background-color: #3e54a2;
+  background-color: $purple;
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  color: #fff;
-  font-family: Bungee, cursive;
+  color: $white;
+  font-family: $font-heading;
   font-weight: 400;
   padding: 0.25em 0.8rem 0.2rem;
   transition: background-color 0.3s;
@@ -48,13 +50,13 @@
 }
 
 .new-tweet .counter {
-  color: #545149;
-  font-family: Bungee, cursive;
+  color: $brown;
+  font-family: $font-heading;
   font-weight: 400;
 }
 
 .new-tweet .counter.text-red {
-  color: #f00;
+  color: $red;
 }
 
 .new-tweet .new-tweet-submit {
