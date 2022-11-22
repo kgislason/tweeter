@@ -1,11 +1,9 @@
-@import 'variables';
-
 /* NAV */
 .nav-primary {
   position: fixed;
-  background-color: $purple;
-  box-shadow: 3px 3px 3px 4px rgba($black, 0.1);
-  color: $white;
+  background-color: #3e54a2;
+  box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
   display: flex;
   height: 120px;
   justify-content: space-between;
@@ -16,7 +14,7 @@
 }
 
 .nav-primary .nav-logo {
-  font-family: $font-heading;
+  font-family: "Bungee", cursive;
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 0.5em;
@@ -31,5 +29,5 @@
 }
 
 .nav-primary .nav-icon {
-  color: $red;
+  color: #f00;
 }
