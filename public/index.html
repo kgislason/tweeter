@@ -22,12 +22,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css">
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css">
-  <link rel="stylesheet" href="/styles/header.css" type="text/css">
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
-  <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
-  <link rel="stylesheet" href="./styles/footer.css" type="text/css">
   <link rel="stylesheet" href="./styles/main.min.css" type="text/css">
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -70,7 +64,7 @@
     <header class="main-header">
       <h1 class="sr-only">Tweeter</h1>
     </header>
-    <section id="new-tweet" class="new-tweet">
+    <section id="section-new-tweet" class="new-tweet">
       <h2 class="sr-only">Compose Tweet</h2>
       <form id="new-tweet" method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
@@ -90,6 +84,10 @@
   </main>
   </div> 
   <footer>&copy; Tweeter Project by <a target="_blank" href="https://github.com/kgislason/tweeter">@kgislason</a> | Lighthouse Labs</footer>
+  <a class="back-to-top" href="#">
+    <span class="sr-only">Back to Top</span>
+    <i class="fa-solid fa-angles-up"></i>
+  </a>
 
 </div> <!-- container -->
   <script src="./scripts/composer-char-counter.js"></script>
