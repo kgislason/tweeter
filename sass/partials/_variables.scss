@@ -1,0 +1,53 @@
+// Colors
+$purple: #4056A1;
+$brown: #545149;
+$yellow: #d89922;
+$red: #f00;
+$yellow-light: #f4f1ec;
+$white: #fff;
+$black: #000;
+
+// Nav
+$nav-height: 120px;
+$nav-height-sm: 80px;
+$nav-box-shadow: 3px 3px 3px 4px rgba($black, 0.1);
+
+
+// Header
+$header-height: 400px;
+
+// Typography
+$font-heading: "Bungee", cursive;
+$font-primary: "Source Sans Pro", sans-serif;
+$font-size-base: 1rem;
+
+// Spacer
+$spacer: 1rem;
+
+//Icons
+$icon-top-size: 60px;
+
+// Animations
+$animation-size: 30%;
+
+// Keyframes
+@keyframes updown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY($animation-size);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// Mixins
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

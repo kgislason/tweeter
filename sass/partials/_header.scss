@@ -1,0 +1,22 @@
+@import 'variables';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: $yellow;
+  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+  color: $white;
+  height: $header-height;
+  margin-bottom: $spacer * 4;
+  max-height: $header-height;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    margin-top: 0;
+    padding-top: $nav-height;
+    max-height: $header-height + $nav-height;
+    height: $header-height + $nav-height;
+  }
+}

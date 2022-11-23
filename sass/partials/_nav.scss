@@ -1,0 +1,68 @@
+@import 'variables';
+
+/* NAV */
+.nav-primary {
+  position: fixed;
+  background-color: $purple;
+  box-shadow: $nav-box-shadow;
+  color: $white;
+  display: flex;
+  height: $nav-height;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1.5em $spacer;
+  width: 100%;
+  transition: all 0.4s;
+
+  @media (max-width: 1024px) {
+    background-color: transparent;
+    box-shadow: none;
+    height: 100px;
+    align-items: center;
+
+    &.on-scroll {
+      background-color: $purple;
+      box-shadow: $nav-box-shadow;
+      height: $nav-height-sm;
+      align-items: flex-end;
+    }
+  }
+
+  .nav-logo {
+    font-family: $font-heading;
+    font-size: $font-size-base * 1.8;
+    font-weight: 400;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-new-tweet {
+    @include flex-center;
+
+    flex-direction: column;
+    margin-bottom: 0.35em;
+
+    a {
+      display: block;
+      color: $white;
+      font-size: $font-size-base * 1.2;
+      text-decoration: none;
+      text-align: center;
+
+      .nav-icon {
+        animation: updown 2s ease infinite;
+        color: $red;
+      }
+    }
+
+    &:hover {
+      .nav-icon {
+        color: rgba($red, 0.8);
+      }
+    }
+  }  
+}

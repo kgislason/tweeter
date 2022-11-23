@@ -1,0 +1,48 @@
+@import 'variables';
+
+footer {
+  font-size: $font-size-base;
+  padding: 4rem 0 3rem;
+  text-align: center;
+
+  a {
+    color: rgba($purple, 0.8);
+
+    text-decoration: none;
+  
+    &:hover {
+      color: rgba($purple, 1);
+    }
+  }
+}
+
+.back-to-top {
+  @include flex-center;
+
+  border-radius: 50%;
+  bottom: $spacer;
+  background-color: rgba($red, 0);
+  height: $icon-top-size;
+  position: fixed;
+  right: $spacer;
+  width: $icon-top-size;
+  transition: all 0.6s;
+  text-align: center;
+  text-decoration: none;
+  z-index: 6;
+
+  i {
+    color: rgba($white, 0);
+    font-size: $icon-top-size * 0.4;
+    line-height: $icon-top-size;
+    text-align: center;
+  }
+
+  &.on-scroll {
+    background-color: rgba($red, 0.8);
+
+    i {
+      color: rgba($white, 0.8);
+    }
+  }
+}
