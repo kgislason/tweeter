@@ -1,32 +1,69 @@
 $(document).ready(function() {
-  // --- our code goes here ---
-  console.log("Ready!");
 
-  // Start our tweent counter
+  // Start our tweent counter on page load
   let count = 0;
 
+  /**
+   * tweetCounter()
+   * 
+   * @returns a number of characters remaining
+   * a negative value means the user has gone over the max
+   */
+
   const tweetCounter = function() {
+
+    const maxChars = 140;
+
     // console logging the number of characters left.
-    if (count < 141) {
-      console.log("Tweent Count: ", count);
+    if (count <= maxChars) {
+      let countReminaing = maxChars - count;
       $('.counter').removeClass('text-red');
-      return count;
+      return countReminaing;
     }
     // if the textarea has more than 140 characters it should be logging negative values.
-    if (count > 140) {
+    if (count > maxChars) {
       let negativeCount = -(count - 140);
-      console.log("Tweent Count: ", negativeCount);
       $('.counter').addClass('text-red');
       return negativeCount;
     }
   };
 
-  $('.new-tweet textarea').on('input', function() {
-    // Get the count from the value of textarea (this)
-    count = $(this).val().length;
-    tweetCounter();
+  /**
+   * countChars()
+   * 
+   * Listen for input from user
+   * update the counter
+   * Set the text below the textarea to the current remaining character count
+   */
 
-    $('.counter').text(tweetCounter());
+  const countChars = function() {
+    $('.new-tweet textarea').on('input', function() {
+      // Get the count from the value of textarea (this)
+      count = $(this).val().length;
+      tweetCounter();
+
+      $('.counter').text(tweetCounter());
+    });
+  };
+
+  countChars();
+
+
+  $(document).ajaxSuccess(function() {
+
+    /**
+     * Reset Tweet Counter
+     */
+
+    const resetTweetCounter = function() {
+      // Reset the global variable count
+      count = 0;
+
+      // Change the text back to zero
+      $('.counter').text(tweetCounter());
+    };
+
+    resetTweetCounter();  
+
   });
-
 });
