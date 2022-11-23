@@ -1,4 +1,4 @@
-/*
+/**
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
@@ -24,35 +24,35 @@ const escapeCode = function (str) {
  */
 
 const createTweetElement = function (object) {
-  const $tweet = $(`<article class="tweet"></article>`);
-
-  $tweet.prepend(`
-  <header>
-    <img with="64" height="64" src="${object["user"]["avatars"]}" class="tweet-pic" alt="Author Profile Picture">
-    <span class="tweet-author">${object["user"]["name"]}</span>
-    <span class="tweet-handle"><a href="">${object["user"]["handle"]}</a></span>
-  </header>
-  <div class="tweet-content">
-    <p>${escapeCode(object["content"]["text"])}</p>
-  </div>
-  <footer>
-      <time>${timeago.format(object["created_at"])}</time>
-      <nav class="tweet-actions">
-        <button type="button" class="btn flag">
-          <span class="sr-only">Flag this tweet</span>
-          <i class="fa-solid fa-flag"></i>
-        </button>
-        <button type="button" class="retweet">
-          <span class="sr-only">Retweet this tweet</span>
-          <i class="fa-solid fa-retweet"></i>
-        </button>
-        <button type="button" class="like">
-          <span class="sr-only">Like this tweet</span>
-          <i class="fa-solid fa-heart"></i>
-        </button>
-      </nav>
-    </footer>
-  `);
+  const $tweet = `
+  <article class="tweet">
+    <header>
+      <img with="64" height="64" src="${object["user"]["avatars"]}" class="tweet-pic" alt="Author Profile Picture">
+      <span class="tweet-author">${object["user"]["name"]}</span>
+      <span class="tweet-handle"><a href="">${object["user"]["handle"]}</a></span>
+    </header>
+    <div class="tweet-content">
+      <p>${escapeCode(object["content"]["text"])}</p>
+    </div>
+    <footer>
+        <time>${timeago.format(object["created_at"])}</time>
+        <nav class="tweet-actions">
+          <button type="button" class="btn flag">
+            <span class="sr-only">Flag this tweet</span>
+            <i class="fa-solid fa-flag"></i>
+          </button>
+          <button type="button" class="retweet">
+            <span class="sr-only">Retweet this tweet</span>
+            <i class="fa-solid fa-retweet"></i>
+          </button>
+          <button type="button" class="like">
+            <span class="sr-only">Like this tweet</span>
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </nav>
+      </footer>
+    </article>
+  `;
 
   return $tweet;
 };
@@ -76,18 +76,35 @@ $(document).ready(function () {
     }
   };
 
+   /**
+   * renderNewTweets
+   *
+   * Loop through array of user objects and return the last one
+   * @param array tweets
+   */
+
+  const renderNewTweet = function(tweets) {
+    const container = $('#tweets-container');
+    for (let ind in tweets) {
+      // Get the latest tweet only
+      if (ind == tweets.length - 1) {
+          container.prepend(createTweetElement(tweets[ind]));
+      }
+    }
+  };
+
   /**
    * Load Tweets loadTweets()
    * 
    */
 
-  const loadTweets = function () {
-    $.getJSON('/tweets', function (data) {
-      renderTweets(data);
+  const loadTweets = function(callback) {
+    $.getJSON('/tweets', function(data) {
+      callback(data);
     });
   };
 
-  loadTweets();
+  loadTweets(renderTweets);
 
   /**
    * Post New Tweets from using AJAX
@@ -104,7 +121,7 @@ $(document).ready(function () {
       const formDataObj = {};
       formDataObj["text"] = $(this).find('textarea').val();
 
-      // Write to errors div
+      // Write to errors divf
       let message = '';
       $(this).find('.errors').text('').hide();
 
@@ -121,15 +138,14 @@ $(document).ready(function () {
         return;
       }
 
-
       // Serialize the form data
       let data = $(this).serialize();
 
       // Clear the textarea
       $(this).find('textarea').val('');
 
-      $.post('/tweets/', data, function (data) {
-        loadTweets(data);
+      $.post('/tweets/', data, function(data) {
+        loadTweets(renderNewTweet);
       }).done(function () {
         console.log("Success!");
       });
@@ -139,24 +155,25 @@ $(document).ready(function () {
   postNewTweet();
 
   /**
-   * Function navOnScroll()
+   * Function addScrollToClass()
    *
-   * @returns adds class to nav on scroll
+   * @returns adds class to back to top button on scroll
    */
 
-  const navOnScroll = function () {
+   const addScrollToClass = function (element) {
     $(window).on('scroll', function () {
       let windowTopOffset = $(this).scrollTop();
 
       if (windowTopOffset == 0) {
-        $('.nav-primary').removeClass('on-scroll');
+        element.removeClass('on-scroll');
       } else {
-        $('.nav-primary').addClass('on-scroll');
+        element.addClass('on-scroll');
       }
     });
   };
 
-  navOnScroll();
+  addScrollToClass($('.nav-primary'));
+  addScrollToClass($('.back-to-top'));
 
   /**
    * Function showTweetForm()
@@ -164,21 +181,23 @@ $(document).ready(function () {
    * @returns reveals the tweet form on nav button click
    */
 
-  const showTweetForm = function () {
-    const newTweetElem = $('#new-tweet');
+  const showTweetForm = function (element) {
+    const newTweetElem = $('#section-new-tweet');
     newTweetElem.hide();
 
-    $('.nav-primary a').on('click', function (e) {
+    element.on('click', function (e) {
       e.preventDefault();
 
-      $('.new-tweet').slideDown();
+      newTweetElem.slideDown();
       const newTweetPosition = newTweetElem.position();
-      console.log(newTweetPosition.top);
+
       $('body, html').animate({
         scrollTop: newTweetPosition.top - 120
-      }, 300);
+      }, 400);
     });
   };
-  showTweetForm();
+
+  showTweetForm($('.nav-primary a'));
+  showTweetForm($('.back-to-top'));
 
 });
