@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   /**
    * tweetCounter()
-   * 
+   *
    * @returns a number of characters remaining
    * a negative value means the user has gone over the max
    */
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
   /**
    * countChars()
-   * 
+   *
    * Listen for input from user
    * update the counter
    * Set the text below the textarea to the current remaining character count
@@ -52,7 +52,9 @@ $(document).ready(function() {
   $(document).ajaxSuccess(function() {
 
     /**
-     * Reset Tweet Counter
+     * resetTweetCounter()
+     *
+     * After ajax submit, resets the counter to 0 and sets text to 140
      */
 
     const resetTweetCounter = function() {
@@ -63,7 +65,7 @@ $(document).ready(function() {
       $('.counter').text(tweetCounter());
     };
 
-    resetTweetCounter();  
+    resetTweetCounter();
 
   });
 });

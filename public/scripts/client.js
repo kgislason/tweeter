@@ -10,7 +10,7 @@
  * @returns safe string
  */
 
-const escapeCode = function (str) {
+const escapeCode = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -23,7 +23,7 @@ const escapeCode = function (str) {
  * @returns markup for a single tweet article
  */
 
-const createTweetElement = function (object) {
+const createTweetElement = function(object) {
   const $tweet = `
   <article class="tweet">
     <header>
@@ -60,7 +60,7 @@ const createTweetElement = function (object) {
 /**
  * Function calls after document is ready
  */
-$(document).ready(function () {
+$(document).ready(function() {
 
   /**
    * renderTweets
@@ -69,14 +69,14 @@ $(document).ready(function () {
    * @param array tweets
    */
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     const container = $('#tweets-container');
     for (let tweet in tweets) {
       container.prepend(createTweetElement(tweets[tweet]));
     }
   };
 
-   /**
+  /**
    * renderNewTweets
    *
    * Loop through array of user objects and return the last one
@@ -87,15 +87,15 @@ $(document).ready(function () {
     const container = $('#tweets-container');
     for (let ind in tweets) {
       // Get the latest tweet only
-      if (ind == tweets.length - 1) {
-          container.prepend(createTweetElement(tweets[ind]));
+      if (Number(ind) === Number(tweets.length - 1)) {
+        container.prepend(createTweetElement(tweets[ind]));
       }
     }
   };
 
   /**
    * Load Tweets loadTweets()
-   * 
+   *
    */
 
   const loadTweets = function(callback) {
@@ -108,10 +108,10 @@ $(document).ready(function () {
 
   /**
    * Post New Tweets from using AJAX
-   * 
+   *
    */
 
-  const postNewTweet = function () {
+  const postNewTweet = function() {
     $('#new-tweet').submit(function(e) {
 
       // Prevent form from submitting and reloading the page
@@ -146,7 +146,7 @@ $(document).ready(function () {
 
       $.post('/tweets/', data, function(data) {
         loadTweets(renderNewTweet);
-      }).done(function () {
+      }).done(function() {
         console.log("Success!");
       });
     });
@@ -160,11 +160,11 @@ $(document).ready(function () {
    * @returns adds class to back to top button on scroll
    */
 
-   const addScrollToClass = function (element) {
-    $(window).on('scroll', function () {
-      let windowTopOffset = $(this).scrollTop();
+  const addScrollToClass = function(element) {
+    $(window).on('scroll', function() {
+      let windowTopOffset = Number($(this).scrollTop());
 
-      if (windowTopOffset == 0) {
+      if (windowTopOffset === 0) {
         element.removeClass('on-scroll');
       } else {
         element.addClass('on-scroll');
@@ -181,11 +181,11 @@ $(document).ready(function () {
    * @returns reveals the tweet form on nav button click
    */
 
-  const showTweetForm = function (element) {
+  const showTweetForm = function(element) {
     const newTweetElem = $('#section-new-tweet');
     newTweetElem.hide();
 
-    element.on('click', function (e) {
+    element.on('click', function(e) {
       e.preventDefault();
 
       newTweetElem.slideDown();
