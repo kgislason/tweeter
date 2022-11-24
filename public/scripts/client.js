@@ -164,7 +164,7 @@ $(document).ready(function() {
     $(window).on('scroll', function() {
       let windowTopOffset = Number($(this).scrollTop());
 
-      if (windowTopOffset === 0) {
+      if (windowTopOffset < 200) {
         element.removeClass('on-scroll');
       } else {
         element.addClass('on-scroll');
@@ -187,17 +187,19 @@ $(document).ready(function() {
 
     element.on('click', function(e) {
       e.preventDefault();
-
-      newTweetElem.slideDown();
+      
       const newTweetPosition = newTweetElem.position();
 
       $('body, html').animate({
         scrollTop: newTweetPosition.top - 120
-      }, 400);
+      }, 400, 'swing', function() {
+        console.log($(this).position().top);
+        newTweetElem.slideDown();
+      });
     });
   };
 
-  showTweetForm($('.nav-primary a'));
+  showTweetForm($('.nav-new-tweet a'));
   showTweetForm($('.back-to-top'));
 
 });
