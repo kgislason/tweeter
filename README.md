@@ -17,3 +17,20 @@ Tweeter is a simple, single-page Twitter clone. An assignment to practice HTML, 
 ## Dependencies
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+### Tweet Form
+![Tweet Form](https://github.com/kgislason/tweeter/blob/master/docs/tweet-form.png?raw=true)
+
+### Desktop Display
+![Screenshot of Desktop Version](https://github.com/kgislason/tweeter/blob/master/docs/desktop-preview.png?raw=true)
+
+### Tablet Display
+![Tablet](https://github.com/kgislason/tweeter/blob/master/docs/tablet-preview.png?raw=true)
+
+### Mobile Display
+![Screenshot of Mobile Version](https://github.com/kgislason/tweeter/blob/master/docs/mobile-preview.png?raw=true)
+
+### Tweets
+![Mobile Tweets](https://github.com/kgislason/tweeter/blob/master/docs/mobile-tweets-preview.png?raw=true)
