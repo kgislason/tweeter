@@ -12,21 +12,7 @@
   align-items: center;
   padding: 2rem 1.5em $spacer;
   width: 100%;
-  transition: all 0.4s;
-
-  @media (max-width: 1024px) {
-    background-color: transparent;
-    box-shadow: none;
-    height: 100px;
-    align-items: center;
-
-    &.on-scroll {
-      background-color: $purple;
-      box-shadow: $nav-box-shadow;
-      height: $nav-height-sm;
-      align-items: flex-end;
-    }
-  }
+  transition: all 0.6s;
 
   .nav-logo {
     font-family: $font-heading;
@@ -45,6 +31,7 @@
 
     flex-direction: column;
     margin-bottom: 0.35em;
+    transition: display 0.4s;
 
     a {
       display: block;
@@ -64,5 +51,25 @@
         color: rgba($red, 0.8);
       }
     }
+  }
+
+  &.on-scroll {
+    background-color: transparent;
+    box-shadow: none;
+    height: $nav-height-sm;
+    padding: $spacer 1.5em $spacer;
+
+    .nav-new-tweet {
+      a {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    background-color: transparent;
+    box-shadow: none;
+    height: 100px;
+    align-items: center;
   }  
 }
