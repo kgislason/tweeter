@@ -160,23 +160,9 @@ strong {
   align-items: center;
   padding: 2rem 1.5em 1rem;
   width: 100%;
-  transition: all 0.4s;
+  transition: all 0.6s;
 }
 
-@media (max-width: 1024px) {
-  .nav-primary {
-    background-color: transparent;
-    box-shadow: none;
-    height: 100px;
-    align-items: center;
-  }
-  .nav-primary.on-scroll {
-    background-color: #4056A1;
-    box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.1);
-    height: 80px;
-    align-items: flex-end;
-  }
-}
 .nav-primary .nav-logo {
   font-family: "Bungee", cursive;
   font-size: 1.8rem;
@@ -195,6 +181,7 @@ strong {
   align-items: center;
   flex-direction: column;
   margin-bottom: 0.35em;
+  transition: display 0.4s;
 }
 
 .nav-primary .nav-new-tweet a {
@@ -214,6 +201,25 @@ strong {
   color: rgba(255, 0, 0, 0.8);
 }
 
+.nav-primary.on-scroll {
+  background-color: transparent;
+  box-shadow: none;
+  height: 80px;
+  padding: 1rem 1.5em 1rem;
+}
+
+.nav-primary.on-scroll .nav-new-tweet a {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .nav-primary {
+    background-color: transparent;
+    box-shadow: none;
+    height: 100px;
+    align-items: center;
+  }
+}
 @keyframes updown {
   0% {
     transform: translateY(0);
@@ -247,6 +253,10 @@ strong {
     height: 520px;
   }
 }
+.header h2 {
+  font-weight: 300;
+}
+
 @keyframes updown {
   0% {
     transform: translateY(0);
