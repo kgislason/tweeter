@@ -19,4 +19,8 @@
     max-height: $header-height + $nav-height;
     height: $header-height + $nav-height;
   }
+
+  h2 {
+    font-weight: 300;
+  }
 }
