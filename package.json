@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "stylelint": "npx stylelint \"./public/styles/*.css\"",
+    "stylelint": "npx stylelint \"./sass/*.scss\"",
     "start": "node server/index.js",
     "sass-watch": "sass --no-source-map --poll --watch sass:public/styles",
     "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "nodemon": "^1.9.2",
-    "stylelint": "^14.14.1",
-    "stylelint-config-standard": "^29.0.0"
+    "stylelint": "^14.15.0",
+    "stylelint-config-standard-scss": "^6.1.0"
   }
 }
