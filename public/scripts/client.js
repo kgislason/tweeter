@@ -183,7 +183,7 @@ $(document).ready(function() {
 
   const showTweetForm = function(element) {
     const newTweetElem = $('#section-new-tweet');
-    newTweetElem.hide();
+    newTweetElem.find('#new-tweet').hide();
 
     element.on('click', function(e) {
       e.preventDefault();
@@ -193,8 +193,7 @@ $(document).ready(function() {
       $('body, html').animate({
         scrollTop: newTweetPosition.top - 120
       }, 400, 'swing', function() {
-        console.log($(this).position().top);
-        newTweetElem.slideDown();
+        newTweetElem.find('#new-tweet').slideDown();
       });
     });
   };
