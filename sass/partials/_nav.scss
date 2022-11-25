@@ -53,8 +53,15 @@
     }
   }
 
-  &.on-scroll {
+  @media (max-width: 1024px) {
     background-color: transparent;
+    box-shadow: none;
+    height: 100px;
+    align-items: center;
+  }
+
+  &.on-scroll {
+    background-color: rgba($purple, 0.9);
     box-shadow: none;
     height: $nav-height-sm;
     padding: $spacer 1.5em $spacer;
@@ -65,11 +72,4 @@
       }
     }
   }
-
-  @media (max-width: 1024px) {
-    background-color: transparent;
-    box-shadow: none;
-    height: 100px;
-    align-items: center;
-  }  
 }
