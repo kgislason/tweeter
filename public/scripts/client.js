@@ -85,12 +85,10 @@ $(document).ready(function() {
 
   const renderNewTweet = function(tweets) {
     const container = $('#tweets-container');
-    for (let ind in tweets) {
-      // Get the latest tweet only
-      if (Number(ind) === Number(tweets.length - 1)) {
-        container.prepend(createTweetElement(tweets[ind]));
-      }
-    }
+    const tweet = tweets[tweets.length - 1];
+
+    // Add the tweet to the top of the list
+    container.prepend(createTweetElement(tweet));
   };
 
   /**
@@ -121,33 +119,42 @@ $(document).ready(function() {
       const formDataObj = {};
       formDataObj["text"] = $(this).find('textarea').val();
 
-      // Write to errors divf
+      // Write to errors div
       let message = '';
-      $(this).find('.errors').text('').hide();
+      let textareaElem = $(this).find('textarea');
+      let errorElem = $(this).find('.errors');
+      errorElem.text('').hide();
 
 
       if (!formDataObj["text"]) {
         message = `<div>You cannot post an empty tweet!</div>`;
-        $(this).find('.errors').append(message).slideDown();
+        errorElem.append(message).slideDown();
         return;
       }
 
       if (formDataObj["text"].length > 140) {
         message = "<div>You cannot post a tweet longer than 140 characters</div>";
-        $(this).find('.errors').append(message).slideDown();
+        errorElem.append(message).slideDown();
         return;
       }
 
       // Serialize the form data
       let data = $(this).serialize();
 
-      // Clear the textarea
-      $(this).find('textarea').val('');
-
       $.post('/tweets/', data, function(data) {
         loadTweets(renderNewTweet);
-      }).done(function() {
+      })
+      .fail(function() {
+        console.log("Error!");
+        message = "<div>Darn, your post was not saved. Let's try that again.</div>";
+        errorElem.append(message).slideDown();
+        return;
+      })
+      .done(function() {
         console.log("Success!");
+
+        // Clear the textarea on successful post
+        textareaElem.delay('200').val('');
       });
     });
   };
